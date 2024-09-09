@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "@emotion/styled";
 import { GNB } from "components/GNB";
 import { GNB_TYPE } from "constants/common";
 import { ProductInCart } from "components/ProductInCart";
 import { Box } from "styles/StyleComponent";
+import { CartContext } from "context/CartContext";
 
-function CartPage({ cart, setCart }) {
+function CartPage() {
+  const { cart, setCart } = useContext(CartContext); // Context 사용
+
   return (
     <Base>
       <GNB type={GNB_TYPE.MAIN} />
